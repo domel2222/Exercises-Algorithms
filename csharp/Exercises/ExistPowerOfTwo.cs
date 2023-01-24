@@ -7,31 +7,41 @@ using System.Threading.Tasks;
 
 namespace Exercises
 {
-    public  class ExistPowerOfTwo
+    public class ExistPowerOfTwo
     {
-        public HashSet<int> ExistingPowerOfTwo(uint [] array)
+        public List<int> ExistingPowerOfTwo(uint [] array)
         {
-            var powersCollection = new HashSet<int>();
+            var powersCollection = new List<int>();
 
-            uint result = 0;
+            if(!array.Any()) return powersCollection;
 
-            foreach (uint item in array)
+            var highestnumberOfPower = 0;
+            foreach (var num in array)
             {
-                result |= item;
-            };
+                var power = 0;
+                var check = num;
 
-            for (int i = 0; i < 32; i++)
-            {
-                int power = 1 << i;
-
-                if ((result & power) != 0)
+                while (check > 0)
                 {
-                    powersCollection.Add(power);
+                    check = check >> 1;
+                    power++;
                 }
+
+                if (power > highestnumberOfPower) 
+                    highestnumberOfPower = power;
             }
 
-            if (powersCollection.Count == 0)
+            if (highestnumberOfPower == 0)
+            {
                 Console.WriteLine("NA");
+
+                return powersCollection;
+            }
+
+            for (int i = 0; i < highestnumberOfPower; i++)
+            {
+                powersCollection.Add((int)Math.Pow(2, i));
+            }
 
             return powersCollection;
         }
