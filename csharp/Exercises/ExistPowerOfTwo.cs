@@ -13,23 +13,9 @@ namespace Exercises
         {
             var powersCollection = new List<int>();
 
-            if(!array.Any()) return powersCollection;
+            if (!array.Any()) return powersCollection;
 
-            var highestnumberOfPower = 0;
-            foreach (var num in array)
-            {
-                var power = 0;
-                var check = num;
-
-                while (check > 0)
-                {
-                    check = check >> 1;
-                    power++;
-                }
-
-                if (power > highestnumberOfPower) 
-                    highestnumberOfPower = power;
-            }
+            int highestnumberOfPower = GetHighestPower(array);
 
             if (highestnumberOfPower == 0)
             {
@@ -44,6 +30,27 @@ namespace Exercises
             }
 
             return powersCollection;
+        }
+
+        private int GetHighestPower(uint[] array)
+        {
+            var highestnumberOfPower = 0;
+            foreach (var num in array)
+            {
+                var power = 0;
+                var check = num;
+
+                while (check > 0)
+                {
+                    check = check >> 1;
+                    power++;
+                }
+
+                if (power > highestnumberOfPower)
+                    highestnumberOfPower = power;
+            }
+
+            return highestnumberOfPower;
         }
     }
 }
