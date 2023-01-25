@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Formats.Asn1;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Exercises
+﻿namespace Exercises
 {
     public class ExistPowerOfTwo
     {
@@ -15,16 +8,16 @@ namespace Exercises
 
             if (!array.Any()) return powersCollection;
 
-            int highestnumberOfPower = GetHighestPower(array);
+            int highestNumberOfPower = GetHighestPower(array);
 
-            if (highestnumberOfPower == 0)
+            if (highestNumberOfPower == 0)
             {
                 Console.WriteLine("NA");
 
                 return powersCollection;
             }
 
-            for (int i = 0; i < highestnumberOfPower; i++)
+            for (int i = 0; i < highestNumberOfPower; i++)
             {
                 powersCollection.Add((int)Math.Pow(2, i));
             }

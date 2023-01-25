@@ -4,9 +4,10 @@
     {
         public int FindPrimesNumbers(int start, int end)
         {
-            var range = Enumerable.Range(start, end);
+            var range = Enumerable.Range(start, end-start);
 
             var primeNumberCounter = 0;
+
             foreach (var number in range)
             {
                 if (IsPrimeNumber(number))
