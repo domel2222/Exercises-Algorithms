@@ -1,6 +1,6 @@
 function optionalPow(a, b) {
   const confirm = window.confirm(
-    "Do you agree with raising " + a + " to the power of " + b + "?"
+    `Do you agree with raising ${a} to the power of ${b}?`
   );
 
   if (confirm) {
