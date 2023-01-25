@@ -8,21 +8,21 @@ function digitSum(array) {
   else if (array.length == 1) return numberDetails.position;
 
   for (const [index, number] of array.entries()) {
-    SumDigits(number, numberDetails, index);
+    sumDigits(number, numberDetails, index);
   }
   return numberDetails.position;
 }
 
-function SumDigits(number, numberDetails, index) {
+function sumDigits(number, numberDetails, index) {
   sumNumber = 0;
   for (const digit of number.toString()) {
     sumNumber += parseInt(digit);
   }
 
-  return ActualizeData(numberDetails, number, index);
+  return actualizeData(numberDetails, number, index);
 }
 
-function ActualizeData(numberDetails, number, index) {
+function actualizeData(numberDetails, number, index) {
   if (sumNumber >= numberDetails.sum && number > numberDetails.value) {
     numberDetails.value = number;
     numberDetails.sum = sumNumber;
