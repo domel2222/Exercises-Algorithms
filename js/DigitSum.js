@@ -18,7 +18,6 @@ function sumDigits(number, numberDetails, index) {
   for (const digit of number.toString()) {
     sumNumber += parseInt(digit);
   }
-
   return actualizeData(numberDetails, number, index);
 }
 
@@ -28,7 +27,6 @@ function actualizeData(numberDetails, number, index) {
     numberDetails.sum = sumNumber;
     numberDetails.position = index;
   }
-
   return numberDetails;
 }
 
